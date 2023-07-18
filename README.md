@@ -14,7 +14,7 @@
 <img src='gifs/bowl.gif' width='19%'>
 </div>
 
-MUSE is a learning environment with a rich set of robotic manipulation tasks with different challenges such as: multimodality, long term, non-prehensile manipulation, deformable objects, etc. MUSE is based on the [MuJoCo](https://github.com/deepmind/mujoco) physics engine and simulations contain an UR5 robotic arm equipped with an RG6 gripper. 
+MUSE is a learning environment with a rich set of robotic manipulation tasks with different challenges such as: multimodality, long term, non-prehensile manipulation, deformable objects, etc. MUSE is based on the [MuJoCo](https://github.com/deepmind/mujoco) physics engine and simulations are based on an UR5 robotic arm equipped with an RG6 gripper. 
 
 
 ## Run expert trajectories
