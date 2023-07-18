@@ -1,0 +1,18 @@
+name: muse
+channels:
+  - defaults
+  - conda-forge
+  - anaconda
+  - menpo
+dependencies:
+  - python
+  - gym
+  - scipy
+  - matplotlib
+  - sk-video
+  - glew
+  - patchelf
+  - ffmpeg
+  - pip
+  - pip:
+      - mujoco-py
