@@ -1,0 +1,12 @@
+<mujoco>
+    <include file="core.xml" />>
+    <include file="meshes.xml" />
+    <include file="textures.xml" />
+    <include file="table.xml" />
+    <include file="left_arm.xml" />
+    <include file="left_arm_physics.xml" />
+    <!-- <include file="right_arm.xml" /> -->
+    <!-- <include file="right_arm_physics.xml" /> -->
+    <include file="lights.xml" />
+    <include file="cameras.xml" />
+</mujoco>

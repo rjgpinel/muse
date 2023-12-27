@@ -1,0 +1,49 @@
+<mujoco>
+    <asset>
+        <!-- textures -->
+        <!-- floor/table/background -->
+        <texture builtin="gradient" type="skybox" name="skybox" rgb1="0.4 0.6 0.8" rgb2="0 0 0" width="256" height="256"/>
+        <texture builtin="checker" type="2d" name="floor_tex" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="256" height="256" mark="edge" markrgb=".8 .8 .8" />
+        <texture builtin="flat" type="2d" name="wall0_tex" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="256" height="256" mark="edge" markrgb=".8 .8 .8" />
+        <texture builtin="flat" type="2d" name="wall1_tex" rgb1=".2 .3 .4" rgb2=".1 .2 .3" width="256" height="256" mark="edge" markrgb=".8 .8 .8" />
+        <texture builtin="flat" type="2d" name="table_tex" rgb1="0.192 0.356 0.451" height="256" width="256"  />
+        <texture builtin="flat" type="2d" name="tower_tex" rgb1="0.192 0.357 0.451" height="256" width="256"  />
+
+        <!-- robot -->
+        <texture builtin="flat" type="cube" name="arm_tex0" height="256" width="256" rgb1="0.7 0.7 0.7" />
+        <texture builtin="flat" type="cube" name="arm_tex1" height="256" width="256" rgb1="0.7 0.7 0.7" />
+        <texture builtin="flat" type="cube" name="arm_tex2" height="256" width="256" rgb1="0.7 0.7 0.7" />
+        <texture builtin="flat" type="cube" name="arm_tex3" height="256" width="256" rgb1="0.7 0.7 0.7" />
+        <texture builtin="flat" type="cube" name="arm_tex4" height="256" width="256" rgb1="0.7 0.7 0.7" />
+        <texture builtin="flat" type="cube" name="arm_tex5" height="256" width="256" rgb1="0.7 0.7 0.7" />
+        <texture builtin="flat" type="cube" name="arm_tex6" height="256" width="256" rgb1="0.7 0.7 0.7" />
+
+        <texture builtin="flat" type="cube" name="gripper_tex" height="256" width="256" rgb1="0.9 0.92 0.93" />
+        <texture builtin="flat" type="cube" name="gripper_arm_tex" height="256" width="256" rgb1="0.9 0.92 0.93" />
+        <texture builtin="flat" type="cube" name="gripper_finger_tex" height="256" width="256" rgb1="1 1 1" />
+        <texture builtin="flat" type="cube" name="gripper_safety_shield_tex" height="256" width="256" rgb1="1 1 1" />
+        <texture builtin="flat" type="cube" name="force_torque_tex" height="256" width="256" rgb1="0.2 0.2 0.2"/>
+        <texture builtin="flat" type="cube" name="mounted_camera_tex" height="256" width="256" />
+
+        <!-- material -->
+        <material name="floor_mat" texrepeat="5 5" texuniform="true" reflectance="0.0" texture="floor_tex" />
+        <material name="wall0_mat" texrepeat="5 5" texuniform="true" reflectance="0" texture="wall0_tex" />
+        <material name="wall1_mat" texrepeat="5 5" texuniform="true" reflectance="0" texture="wall1_tex" />
+        <material name="table_mat" texrepeat="5 5" texuniform="true" shininess="0.4" specular="0.7" reflectance="0" texture="table_tex" />
+        <material name="tower_mat" texrepeat="10 10" texuniform="true" shininess="0.5" specular="0.4" reflectance="0" texture="tower_tex" />
+        <material name="arm_mat0" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex0" />
+        <material name="arm_mat1" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex1" />
+        <material name="arm_mat2" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex2" />
+        <material name="arm_mat3" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex3" />
+        <material name="arm_mat4" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex4" />
+        <material name="arm_mat5" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex5" />
+        <material name="arm_mat6" shininess="0.03" specular="0.4" reflectance="0" texture="arm_tex6" />
+
+        <material name="gripper_mat" shininess="0.03" specular="0.75" texture="gripper_tex" />
+        <material name="gripper_arm_mat" shininess="0.03" specular="0.75" texture="gripper_arm_tex" />
+        <material name="gripper_finger_mat" shininess="0.03" specular="0.75" texture="gripper_finger_tex" />
+        <material name="gripper_safety_shield_mat" shininess="0.03" specular="0.75" texture="gripper_safety_shield_tex" />
+        <material name="force_torque_mat" shininess="0.03" specular="0.75" texture="force_torque_tex" />
+        <material name="mounted_camera_mat" shininess="0.03" specular="0.75" texture="mounted_camera_tex" />
+    </asset>
+</mujoco>

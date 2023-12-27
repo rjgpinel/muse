@@ -1,0 +1,30 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+
+    <asset>
+        <texture builtin="flat" type="2d" name="cube0_tex" height="32" width="32" />
+        <material name="cube0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube0_tex" />
+        <texture builtin="flat" type="2d" name="cube1_tex" height="32" width="32" />
+        <material name="cube1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube1_tex" />
+        <texture builtin="flat" type="2d" name="cube2_tex" height="32" width="32" />
+        <material name="cube2_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube2_tex" />
+    </asset>
+
+    <worldbody>
+      <body childclass="cube" name="cube0" pos="0 0 -2">
+        <joint name="cube0_joint" />
+        <geom name="cube0" size="0.025 0.025 0.025" type="box"  material="cube0_mat" />
+        <site name="cube0" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+      <body childclass="cube" name="cube1" pos="0 0 -2">
+          <joint name="cube1_joint" />
+          <geom name="cube1" size="0.025 0.025 0.025" type="box"  material="cube1_mat" />
+          <site name="cube1" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+      <body childclass="cube" name="cube2" pos="0 0 -2">
+          <joint name="cube2_joint" />
+          <geom name="cube2" size="0.025 0.025 0.025" type="box"  material="cube2_mat" />
+          <site name="cube2" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+    </worldbody>
+</mujoco>

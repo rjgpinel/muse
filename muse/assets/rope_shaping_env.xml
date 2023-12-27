@@ -1,0 +1,82 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+    <size njmax="8000" nconmax="4000"/>
+    <asset>
+        <texture builtin="flat" type="2d" name="rope0_tex" height="32" width="32" />
+        <material name="rope0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="rope0_tex" />
+        <texture builtin="flat" type="2d" name="marker0_tex" height="32" width="32" />
+        <material name="marker0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="marker0_tex" />
+        <texture builtin="flat" type="2d" name="marker1_tex" height="32" width="32" />
+        <material name="marker1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="marker1_tex" />
+    </asset>
+
+    <worldbody>
+        <body mocap="true"  name="markers" pos="-0.6 0.0 0.0001">
+            <site name="marker0" size="0.03 0.03 0.01" pos="0.0 0.0 0.0" rgba="0 0 0 0" type="box" />
+            <geom name="marker0" size="0.03 0.03 0.01" type="plane"  material="marker0_mat" />
+        </body>
+
+        <body mocap="true"  name="marker1" pos="-0.3 0.0 0.0001">
+            <site name="marker1" size="0.03 0.03 0.01" pos="0.0 0.0 0.0" rgba="0 0 0 0" type="box" />
+            <geom name="marker1" size="0.03 0.03 0.01" pos="0.0 0.0 0.0" type="plane"  material="marker1_mat" />
+        </body>
+
+        <!-- <body name="B4" pos="0 0 0.5" >
+             <freejoint name="rope0_joint" />
+             <composite type="rope" count="8 1 1" spacing="0.04" offset="0 0 2">
+             <joint kind="main" damping="0.005" stiffness="0.01" />
+             <geom type="capsule" size=".0125 .015" rgba=".8 .2 .1 1" material="rope0_mat" mass="1" />
+             </composite>
+             </body>
+        -->
+        <body name="B4" pos="0 0 0.5">
+            <joint name="rope0_joint" damping="0"/>
+            <geom name="G4" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat" />
+            <site name="S4" rgba="0.0 0.0 0.0 0.0" />
+            <body name="B5" pos="0.04 0 0">
+                <joint name="J0_5" pos="-0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                <joint name="J1_5" pos="-0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                <geom name="G5" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat" />
+                <site name="S5" rgba="0.0 0.0 0.0 0.0" />
+                <body name="B6" pos="0.04 0 0">
+                    <joint name="J0_6" pos="-0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                    <joint name="J1_6" pos="-0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                    <geom name="G6" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat"/>
+                    <site name="S6" rgba="0.0 0.0 0.0 0.0" />
+                    <body name="B7" pos="0.04 0 0">
+                        <joint name="J0_7" pos="-0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                        <joint name="J1_7" pos="-0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                        <geom name="G7" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat"/>
+                        <site name="S7" rgba="0.0 0.0 0.0 0.0" />
+                    </body>
+                </body>
+            </body>
+            <body name="B3" pos="-0.04 0 0">
+                <joint name="J0_3" pos="0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                <joint name="J1_3" pos="0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                <geom name="G3" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat" />
+                <site name="S3" rgba="0.0 0.0 0.0 0.0" />
+                <body name="B2" pos="-0.04 0 0">
+                    <joint name="J0_2" pos="0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                    <joint name="J1_2" pos="0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                    <geom name="G2" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat" />
+                    <site name="S2" rgba="0.0 0.0 0.0 0.0" />
+                    <body name="B1" pos="-0.04 0 0">
+                        <joint name="J0_1" pos="0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                        <joint name="J1_1" pos="0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                        <geom name="G1" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat" />
+                        <site name="S1" rgba="0.0 0.0 0.0 0.0" />
+                        <body name="B0" pos="-0.04 0 0">
+                            <joint name="J0_0" pos="0.02 0 0" axis="0 1 0" type="hinge" group="3" stiffness="0.01"/>
+                            <joint name="J1_0" pos="0.02 0 0" axis="0 0 1" type="hinge" group="3" stiffness="0.01"/>
+                            <geom name="G0" size="0.0125 0.015" quat="0.707107 0 0.707107 0" type="capsule" solref="0.02 1" solimp="0.9 0.95 0.001 0.5 2" material="rope0_mat" />
+                            <site name="S0" rgba="0.0 0.0 0.0 0.0" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+
+    </worldbody>
+
+</mujoco>

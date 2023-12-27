@@ -1,0 +1,67 @@
+<mujoco>
+    <compiler angle="radian" />
+    <size njmax="500" nconmax="100" />
+    <!-- initial -->
+    <option timestep="2e-3"
+            iterations="10"
+            tolerance="1e-10"
+            solver="Newton"
+            cone="elliptic"
+            impratio="2"
+            noslip_iterations="2"
+    >
+        <flag warmstart="enable"></flag>
+    </option>
+    <visual>
+        <map znear="0.001"/>
+        <!-- <quality shadowsize="4096" offsamples="1024" numslices="112" numstacks="64" numquads="16" /> -->
+    </visual>
+    <!-- <visual>
+         <map znear="0.001"/>
+         <quality offsamples="0" numslices="1" numstacks="1" numquads="1" />
+         </visual> -->
+    <!-- <visual>
+         <map znear="0.001"/>
+         <quality offsamples="2" numslices="14" numstacks="8" numquads="2" />
+         </visual> -->
+
+    <!-- default geom and joints parameters -->
+    <default>
+        <geom condim="4" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+        <default class="robot">
+            <joint armature="1" damping="50" />
+            <default class="gripper_arm">
+                <joint armature="0.25" damping="1" stiffness="0.01" />
+                <default class="gripper_finger">
+                </default>
+            </default>
+        </default>
+
+        <default class="cube">
+            <joint type="free" damping="0.1" frictionloss="1" />
+            <geom condim="3" mass="1" />
+        </default>
+
+        <default class="push_cube0">
+            <joint type="free" damping="0.1" frictionloss="0.3" />
+            <geom condim="3" mass="45" />
+        </default>
+        <default class="push_cube1">
+            <joint type="free" damping="0.1" frictionloss="0.3" />
+            <geom condim="3" mass="45" />
+        </default>
+    </default>
+
+    <default class="rope">
+        <joint type="free" damping="0.005" />
+        <geom condim="3" mass="0.5" />
+    </default>
+
+    <visual>
+        <scale forcewidth='0.02' contactwidth='0.06' contactheight='0.02' jointwidth='0.02' framewidth='0.02' framelength='0.3'/>
+    </visual>
+
+    <contact>
+        <exclude body1="table" body2="tower" />
+    </contact>
+</mujoco>

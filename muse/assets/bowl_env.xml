@@ -1,0 +1,70 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+    <asset>
+        <!-- cube -->
+        <texture builtin="flat" type="2d" name="cube0_tex" height="32" width="32" />
+        <material name="cube0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube0_tex" />
+        <!-- bowl -->
+        <mesh name="bowl" file="meshes/bowl/model_normalized2.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part0" file="meshes/bowl/part0.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part1" file="meshes/bowl/part1.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part2" file="meshes/bowl/part2.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part3" file="meshes/bowl/part3.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part4" file="meshes/bowl/part4.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part5" file="meshes/bowl/part5.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part6" file="meshes/bowl/part6.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part7" file="meshes/bowl/part7.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part8" file="meshes/bowl/part8.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part9" file="meshes/bowl/part9.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part10" file="meshes/bowl/part10.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part11" file="meshes/bowl/part11.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part12" file="meshes/bowl/part12.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part13" file="meshes/bowl/part13.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part14" file="meshes/bowl/part14.stl" scale="0.2 0.2 0.2" />
+        <mesh name="bowl_part15" file="meshes/bowl/part15.stl" scale="0.2 0.2 0.2" />
+        <texture builtin="flat" type="2d" name="bowl0_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="bowl0_part1_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="bowl0_part2_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="bowl0_part3_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="bowl0_part4_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="bowl0_part5_tex" height="32" width="32" />
+        <material name="bowl0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="bowl0_tex" />
+        <material name="bowl0_part1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="bowl0_part1_tex" />
+        <material name="bowl0_part2_mat" specular="0.5" shininess="0.2" reflectance="0" texture="bowl0_part2_tex" />
+        <material name="bowl0_part3_mat" specular="0.5" shininess="0.2" reflectance="0" texture="bowl0_part3_tex" />
+        <material name="bowl0_part4_mat" specular="0.5" shininess="0.2" reflectance="0" texture="bowl0_part4_tex" />
+        <material name="bowl0_part5_mat" specular="0.5" shininess="0.2" reflectance="0" texture="bowl0_part5_tex" />
+    </asset>
+
+    <worldbody>
+        <body childclass="cube" name="cube0" pos="0.025 0.025 0.025">
+            <joint name="cube0_joint" />
+            <geom name="cube0" size="0.025 0.025 0.025" type="box"  material="cube0_mat" rgba="0 0.48 0.36 1" />
+            <site name="cube0" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+        </body>
+        <!-- <body childclass="cube" name="bowl0" pos="0.0 0.0 0.1">
+             <joint name="bowl0_joint" />
+             <site name="bowl0" size="0.1 0.1 0.1" rgba="1 0 0 0" type="sphere" />
+             </body> -->
+        <body mocap="true" name="bowl0" pos="0.0 0.0 0.1">
+            <geom name="bowl0_part0" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part0" />
+            <geom name="bowl0_part1" size="0.02 0.02 0.02" type="mesh" mesh="bowl_part1" material="bowl0_mat" />
+            <geom name="bowl0_part2" size="0.02 0.02 0.02" type="mesh" mesh="bowl_part2" material="bowl0_mat"/>
+            <geom name="bowl0_part3" size="0.02 0.02 0.02" type="mesh" mesh="bowl_part3" material="bowl0_mat"  />
+            <geom name="bowl0_part4" size="0.02 0.02 0.02" type="mesh" mesh="bowl_part4" material="bowl0_mat" />
+            <geom name="bowl0_part5" size="0.02 0.02 0.02" type="mesh" mesh="bowl_part5" material="bowl0_mat" />
+            <geom name="bowl0_part6" size="0.02 0.02 0.02" type="mesh" mesh="bowl_part6" material="bowl0_mat" />
+            <geom name="bowl0_part7" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part7" />
+            <geom name="bowl0_part8" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part8" />
+            <geom name="bowl0_part9" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part9" />
+            <geom name="bowl0_part10" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part10" />
+            <geom name="bowl0_part11" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part11" />
+            <geom name="bowl0_part12" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part12" />
+            <geom name="bowl0_part13" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part13" />
+            <geom name="bowl0_part14" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part14" />
+            <geom name="bowl0_part15" size="0.02 0.02 0.02" material="bowl0_mat" type="mesh" mesh="bowl_part15" />
+            <site name="bowl0" size="0.1 0.1 0.1" rgba="1 0 0 0" type="sphere" />
+        </body>
+
+    </worldbody>
+</mujoco>

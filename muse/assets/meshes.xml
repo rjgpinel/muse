@@ -1,0 +1,37 @@
+<mujoco>
+    <asset>
+        <!-- arms -->
+        <mesh name="base" file="meshes/ur5/visual/base.stl" />
+        <mesh name="shoulder" file="meshes/ur5/visual/shoulder.stl" />
+        <mesh name="upperarm" file="meshes/ur5/visual/upperarm.stl" />
+        <mesh name="forearm" file="meshes/ur5/visual/forearm.stl" />
+        <mesh name="wrist1" file="meshes/ur5/visual/wrist1.stl" />
+        <mesh name="wrist2" file="meshes/ur5/visual/wrist2.stl" />
+        <mesh name="wrist3" file="meshes/ur5/visual/wrist3.stl" />
+        <mesh name="robotiq_ft300" file="meshes/robotiq_ft_sensor/visual/robotiq_ft300.STL" />
+        <mesh name="robotiq_ft300_coupling" file="meshes/robotiq_ft_sensor/visual/mountings/robotiq_ft300-G-062-COUPLING_G-50-4M6-1D6_20181119.STL" />
+        <!-- right gripper -->
+        <mesh name="right_gripper_body" file="meshes/rg2/visual/body.stl" />
+        <mesh name="right_single_bracket" file="meshes/rg2/visual/single_bracket.stl" />
+        <mesh name="right_moment_arm" file="meshes/rg2/visual/moment_arm.stl" />
+        <mesh name="right_truss_arm" file="meshes/rg2/visual/truss_arm.stl" />
+        <mesh name="right_finger_tip_1" file="meshes/rg2/collision/finger_tip_1.stl" />
+        <mesh name="right_finger_tip_2" file="meshes/rg2/collision/finger_tip_2.stl" />
+        <mesh name="right_flex_finger" file="meshes/rg2/visual/flex_finger.stl" />
+        <!-- left gripper -->
+        <mesh name="left_gripper_body" file="meshes/rg6/visual/body.stl" />
+        <mesh name="left_single_bracket" file="meshes/rg6/visual/single_bracket.stl" />
+        <mesh name="left_moment_arm" file="meshes/rg6/visual/moment_arm.stl" />
+        <mesh name="left_truss_arm" file="meshes/rg6/visual/truss_arm.stl" />
+        <mesh name="left_finger_tip_1" file="meshes/rg6/collision/finger_tip_1.stl" />
+        <mesh name="left_finger_tip_2" file="meshes/rg6/collision/finger_tip_2.stl" />
+        <mesh name="left_flex_finger" file="meshes/rg6/visual/flex_finger.stl" />
+        <mesh name="left_safety_shield" file="meshes/rg6/visual/safety_shield.stl" />
+        <!-- table -->
+        <mesh name="vention_tower" file="meshes/table/vention_tower_4.stl" />
+        <mesh name="vention_table" file="meshes/table/vention_table.stl" />
+        <!-- realsense d435 camera -->
+        <mesh name="realsense" file="meshes/realsense2/d435.stl" />
+        <mesh name="realsense-rotated" file="meshes/realsense2/d435-rotated.stl" />
+    </asset>
+</mujoco>

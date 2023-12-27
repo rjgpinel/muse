@@ -1,0 +1,104 @@
+<mujoco>
+    <worldbody>
+        <body childclass="robot" name="left_base_link" pos="-0.17469 -0.38675 0.79002" quat="0.00196687 -0.92429341 0.00171121 0.38167382">
+            <geom pos="0 0 0" type="mesh"  mesh="base" name="left_base" material="arm_mat0" />
+            <body name="left_shoulder_link" pos="0 0 0.08918501667510044">
+                <inertial pos="0 0 0" mass="3.7" diaginertia="0.0149724 0.0149724 0.0104063" />
+                <joint name="left_shoulder_pan_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14159 3.14159" />
+                <geom quat="0 0 0 1" type="mesh" mesh="shoulder" name="left_shoulder" material="arm_mat1" />
+                <body name="left_upper_arm_link" pos="0.00010727 0 0" quat="0.707203 0.707011 0 0">
+                    <inertial pos="-0.212748 0 0.136" quat="0.707107 0 0.707107 0" mass="8.393" diaginertia="0.13418 0.13418 0.0151074" />
+                    <joint name="left_shoulder_lift_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14159 3.14159" />
+                    <geom pos="0 0 0.136" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="upperarm" name="left_upperarm" material="arm_mat2" />
+                    <body name="left_forearm_link" pos="-0.425495 0 0" quat="1 0 0 0">
+                        <inertial pos="-0.212748 0 0.0165" quat="0.707107 0 0.707107 0" mass="2.275" diaginertia="0.0312406 0.0312406 0.004095" />
+                        <joint name="left_elbow_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14159 3.14159" />
+                        <geom pos="0 0 0.0165" quat="0.5 0.5 -0.5 -0.5" type="mesh"  mesh="forearm" name="left_forearm" material="arm_mat3" />
+                        <body name="left_wrist_1_link" pos="-0.39241 -0.000815221 0.1108" quat="1 0 0 0">
+                            <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="1.219" diaginertia="0.00342844 0.00262831 0.00262831" />
+                            <joint name="left_wrist_1_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14159 3.14159" />
+                            <geom pos="0 0 -0.093" quat="0.707107 0.707107 0 0" type="mesh"  mesh="wrist1" name="left_wrist1" material="arm_mat4" />
+                            <body name="left_wrist_2_link" pos="1.88989e-05 -0.0948601 0.000105027" quat="0.707498 0.706715 -1.37268e-06 -1.3742e-06">
+                                <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="1.219" diaginertia="0.0021942 0.00178911 0.00178911" />
+                                <joint name="left_wrist_2_joint" pos="0 0 0" axis="0 0 1" limited="true" range="-3.14159 3.14159" />
+                                <geom pos="0 0 -0.095" type="mesh"  mesh="wrist2" name="left_wrist2" material="arm_mat5" />
+                                <body name="left_wrist_3_link" pos="8.72733e-05 0.0825362 6.32978e-05" quat="0.707378 -0.706836 1.13614e-05 -1.13701e-05">
+<!-- used as the reference for mocap -->
+                                    <!-- match real -->
+                                    <!-- <body name="left_gripper_frame" pos="0 0 0.28" quat="1 0 0 0" /> -->
+                                    <inertial pos="0.000979364 0.00193023 0.0729899" quat="0.611471 0.349745 0.416615 0.574642" mass="1.3579" diaginertia="0.00953533 0.00654876 0.00609967" />
+                                    <joint name="left_wrist_3_joint" pos="0 0 0" axis="0 0 1" limited="false" />
+                                    <geom pos="0 0 -0.0823" quat="0.707107 0.707107 0 0" type="mesh" rgba="0.7 0.7 0.7 1" mesh="wrist3" name="left_wrist3" material="arm_mat6" />
+                                    <!-- <geom size="0.005 0.005 0.005" pos="0 0 -0.01" quat="0.5 0.5 -0.5 0.5" type="box" /> -->
+                                    <!-- force torque sensor -->
+                                    <geom pos="0 0 -0.004" quat="0.707107 0 0 -0.707107" type="mesh" mesh="robotiq_ft300_coupling" name="left_robotiq_ft300_coupling" material="force_torque_mat" />
+                                    <geom pos="0 0 0.0375" quat="0 0.707107 0.707107 0" type="mesh" mesh="robotiq_ft300" name="left_robotiq_ft300" material="force_torque_mat" />
+                                    <!-- gripper body -->
+                                    <geom pos="0 0 0.0375" quat="-1 0 0 0" type="mesh" rgba="0.65 0.62 0.58 1" mesh="left_single_bracket" name="left_single_bracker" material="gripper_mat" />
+                                    <body pos="0 0 0.0885" quat="1 0 0 0">
+                                        <body name="left_gripper_frame" pos="0 0 0.2" quat="1 0 0 0" />
+                                        <body name="left_gripper_sweep_frame" pos="0 0 0.211" />
+                                        <geom type="mesh" mesh="left_gripper_body" name="left_gripper_body" material="gripper_mat" />
+                                    </body>
+                                    <!-- realsense camera holder -->
+                                    <body pos="-1.51302e-06 0.0325 0.1981" quat="1 0 0 0">
+                                        <geom  type="mesh" mesh="realsense" name="left_mounted_camera" material="mounted_camera_mat" />
+                                        <!-- <camera name="left_mounted_camera" fovy="42.5"  euler="3.14159265359 0 3.14159265359" pos="0.0325 0 -0.013"/> -->
+                                        <!-- <camera name="left_mounted_camera" fovy="42.5"  euler="3.14159265359 0 3.14159265359" pos="0.0325 0 0.0"/> -->
+                                    </body>
+                                    <!-- fingers -->
+                                    <body name="left_gripper_finger_1_moment_arm" pos="-0.0238 0 0.1545" quat="-0.970137 0 0.242556 0">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                        <joint name="left_gripper_finger_1_joint" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.3" damping="0.5" />
+                                        <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_moment_arm" name="left_moment_arm_1" material="gripper_arm_mat" />
+                                    </body>
+                                    <!-- finger 1 -->
+                                    <body name="left_gripper_finger_1_truss_arm" pos="-0.0105 0 0.1776" quat="-0.970137 0 0.242556 0">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                        <joint name="left_gripper_finger_1_truss_arm_joint" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.3" />
+                                        <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_truss_arm" name="left_truss_arm_1" material="gripper_arm_mat" />
+                                        <body name="left_gripper_finger_1_tip" pos="-0.05503 0 0.05807" quat="0.970137 0 0.242556 0">
+                                            <inertial pos="0.0049 0 0.0109" quat="0.977772 0 0.209669 0" mass="0.002" diaginertia="0.00200029 0.00200029 0.002" />
+                                            <joint name="left_gripper_finger_1_tip_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="0 1.3" />
+                                            <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_finger_tip_1" name="left_finger_1_tip_1" material="gripper_finger_mat" />
+                                            <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_finger_tip_2" name="left_finger_1_tip_2" material="gripper_finger_mat" />
+                                            <geom pos="0.0098 0 0.0218" type="mesh" rgba="0.25 0.25 0.25 1" mesh="left_flex_finger" name="left_flex_finger_1" material="gripper_finger_mat" />
+                                            <body name="left_gripper_finger_1_safety_shield" pos="-0.00665 0 -0.01155" quat="0.970137 0 -0.242556 0">
+                                                <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                                <joint name="left_gripper_finger_1_safety_shield_joint" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.3" />
+                                                <geom type="mesh" rgba="0.25 0.25 0.25 1" mesh="left_safety_shield" name="left_gripper_finger_1_safety_shield" material="gripper_safety_shield_mat" />
+                                            </body>
+                                        </body>
+                                    </body>
+                                    <!-- finger 2 -->
+                                    <body  childclass="gripper_arm" name="left_gripper_finger_2_moment_arm" pos="0.0238 0 0.1545" quat="0 -0.242556 0 -0.970137">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                        <joint name="left_gripper_finger_2_joint" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.3" damping="0.5" />
+                                        <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_moment_arm" name="left_moment_arm_2" material="gripper_arm_mat"/>
+                                    </body>
+                                    <body childclass="gripper_arm" name="left_gripper_finger_2_truss_arm" pos="0.0105 0 0.1776" quat="0 -0.242556 0 -0.970137">
+                                        <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                        <joint name="left_gripper_finger_2_truss_arm_joint" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.3" />
+                                        <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_truss_arm" name="left_truss_arm_2" material="gripper_arm_mat" />
+                                        <body name="left_gripper_finger_2_tip" pos="-0.05503 0 0.05807" quat="0.970137 0 0.242556 0">
+                                            <inertial pos="0.0049 0 0.0109" quat="0.977772 0 0.209669 0" mass="0.002" diaginertia="0.00200029 0.00200029 0.002" />
+                                            <joint name="left_gripper_finger_2_tip_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="0 1.3" />
+                                            <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_finger_tip_1" name="left_finger_2_tip_1" material="gripper_finger_mat" />
+                                            <geom type="mesh" rgba="0.9 0.92 0.93 1" mesh="left_finger_tip_2" name="left_finger_2_tip_2" material="gripper_finger_mat" />
+                                            <geom pos="0.0098 0 0.0218" type="mesh" rgba="0.25 0.25 0.25 1" mesh="left_flex_finger" name="left_flex_finger_2" material="gripper_finger_mat" />
+                                            <body name="left_gripper_finger_2_safety_shield" pos="-0.00665 0 -0.01155" quat="0.970137 0 -0.242556 0">
+                                                <inertial pos="0 0 0" mass="0.001" diaginertia="0.001 0.001 0.001" />
+                                                <joint name="left_gripper_finger_2_safety_shield_joint" pos="0 0 0" axis="0 1 0" limited="true" range="0 1.3" />
+                                                <geom type="mesh" rgba="0.25 0.25 0.25 1" mesh="left_safety_shield" name="left_gripper_finger_2_safety_shield" material="gripper_safety_shield_mat" />
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

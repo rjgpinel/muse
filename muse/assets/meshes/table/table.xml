@@ -1,0 +1,18 @@
+<mujoco>
+    <asset>
+        <mesh name="vention_tower_1" file="vention_tower_1.stl" />
+        <mesh name="vention_tower_2" file="vention_tower_2.stl" />
+        <mesh name="vention_tower_3" file="vention_tower_3.stl" />
+        <mesh name="vention_table2" file="vention_table2.stl" />
+        <texture builtin="flat" name="texgeom" height="32" width="32" rgb1="1 1 1" type="cube"></texture>
+        <texture builtin="flat" name="table_tex" height="32" width="32" rgb1="1 1 1" type="cube"></texture>
+        <material name="geom_mat" shininess="0.03" specular="0.75" texture="texgeom"></material>
+        <material name="table_mat" shininess="0.03" specular="0.75" texture="table_tex"></material>
+    </asset>
+    <worldbody>
+            <geom pos="0 -0.3825 0" type="mesh" rgba="0.192 0.357 0.451 1" mesh="vention_tower_1" name="vention_tower_1" material="table_mat"/>
+            <geom pos="0 -0.3825 0" type="mesh" rgba="0.192 0.357 0.451 1" mesh="vention_tower_2" name="vention_tower_2" material="table_mat"/>
+            <geom pos="0 -0.3825 0" type="mesh" rgba="0.192 0.357 0.451 1" mesh="vention_tower_3" name="vention_tower_3" material="table_mat"/>
+            <geom type="mesh" rgba="0.192 0.357 0.451 1" mesh="vention_table2" material="table_mat"/>
+    </worldbody>
+</mujoco>

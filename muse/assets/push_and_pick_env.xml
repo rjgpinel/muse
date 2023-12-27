@@ -1,0 +1,36 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+    <asset>
+        <texture builtin="flat" type="2d" name="cube0_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="obstacle0_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="obstacle1_tex" height="32" width="32" />
+        <texture builtin="flat" type="2d" name="obstacle2_tex" height="32" width="32" />
+        <material name="cube0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube0_tex" />
+        <material name="obstacle0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="obstacle0_tex" />
+        <material name="obstacle1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="obstacle1_tex" />
+        <material name="obstacle2_mat" specular="0.5" shininess="0.2" reflectance="0" texture="obstacle2_tex" />
+    </asset>
+
+    <worldbody>
+      <body childclass="cube" name="cube0" pos="0.025 0.025 0.025">
+        <joint name="cube0_joint" />
+        <geom name="cube0" size="0.025 0.025 0.025" type="box"  material="cube0_mat"/>
+        <site name="cube0" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+      <body childclass="cube" name="obstacle0" pos="0.025 0.025 0.025">
+        <joint name="obstacle0_joint" />
+        <geom name="obstacle0" size="0.025 0.025 0.025" type="box"  material="obstacle0_mat" />
+        <site name="obstacle0" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+      <body childclass="cube" name="obstacle1" pos="0.025 0.025 0.025">
+          <joint name="obstacle1_joint" />
+          <geom name="obstacle1" size="0.025 0.025 0.025" type="box"  material="obstacle1_mat" />
+          <site name="obstacle1" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+      <body childclass="cube" name="obstacle2" pos="0.025 0.025 0.025">
+          <joint name="obstacle2_joint" />
+          <geom name="obstacle2" size="0.025 0.025 0.025" type="box"  material="obstacle2_mat" />
+          <site name="obstacle2" size="0.025 0.025 0.025" rgba="1 0 0 1" type="sphere" />
+      </body>
+    </worldbody>
+</mujoco>

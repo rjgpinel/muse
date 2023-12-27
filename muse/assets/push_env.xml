@@ -1,0 +1,35 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+
+    <asset>
+        <texture builtin="flat" type="2d" name="cube0_tex" height="32" width="32" />
+        <material name="cube0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube0_tex" />
+        <texture builtin="flat" type="2d" name="marker0_tex" height="32" width="32" />
+        <material name="marker0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="marker0_tex" />
+    </asset>
+
+    <worldbody>
+        <body childclass="push_cube0" name="cube0" pos="0.02 0.02 0.02">
+            <joint name="cube0_joint" />
+            <geom name="cube0" size="0.02 0.02 0.02" type="box"  material="cube0_mat" />
+            <site name="cube0" size="0.02 0.02 0.02" rgba="1 0 0 1" type="sphere" />
+        </body>
+        <!-- <body mocap="true" name="goal0" pos="0.0 0.0 0.012">
+             <geom name="goal0" size="0.012 0.06 0.012" type="box"  material="goal0_mat" rgba="0.592 0.188 0.365 1" />
+             <site name="goal0" size="0.048 0.06 0.012" pos="0.06 0.0 0.0" rgba="1 0 0 0" type="box" />
+             <body name="goal0_left_part" pos="0.048 0.072 0.0">
+             <geom name="goal0_left_part" size="0.06 0.012 0.012" type="box"  material="goal0_mat" rgba="0.592 0.188 0.365 1" />
+             </body>
+             <body name="goal0_right_part" pos="0.048 -0.072 0.0">
+             <geom name="goal0_right_part" size="0.06 0.012 0.012" type="box"  material="goal0_mat" rgba="0.592 0.188 0.365 1" />
+             </body>
+             </body> -->
+        <body mocap="true"  name="marker0" pos="0.0 0.0 0.0001">
+            <site name="marker0" size="0.03 0.03 0.01" pos="0.0 0.0 0.0" rgba="0 0 0 0" type="box" />
+            <geom name="marker0" size="0.03 0.03 0.01" type="plane"  material="marker0_mat" />
+        </body>
+
+
+    </worldbody>
+
+</mujoco>

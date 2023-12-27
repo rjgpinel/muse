@@ -1,0 +1,42 @@
+<mujoco>
+    <include file="base_env.xml" />
+    <asset>
+        <texture builtin="flat" type="2d" name="nut0_tex" height="32" width="32" />
+        <material name="nut0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="nut0_tex" />
+        <texture builtin="flat" type="2d" name="screw0_tex" height="32" width="32" />
+        <material name="screw0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="screw0_tex" />
+        <texture builtin="flat" type="2d" name="screw1_tex" height="32" width="32" />
+        <material name="screw1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="screw1_tex" />
+    </asset>
+    <size njmax="8000" nconmax="4000" />
+    <worldbody>
+        <body mocap="true"  name="screw0" pos="-0.5 0.0 0.0525" >
+            <geom name="screw0" size="0.0175 0.0175 0.0525" type="box"  material="screw0_mat" pos="0.0 0.0 0.0" mass="10"/>
+        </body>
+        <!-- <body mocap="true"  name="screw1" pos="-0.5 0.0 0.075" > -->
+        <!-- <geom name="screw1" size="0.0175 0.05 0.05" type="cylinder"  material="screw1_mat" pos="0.0 0.0 0.0" mass="10" /> -->
+        <!-- </body> -->
+        <body name="nut0" pos="-0.5 0.0 0.075" >
+            <joint name="nut0_joint" />
+            <!-- <geom name="nut0_part0" size="0.0125 0.0375 0.01" type="box"  material="nut0_mat" pos="0.0375 0.0125 0.0" mass="0" /> -->
+            <geom name="nut0_part0" size="0.015 0.045 0.015" type="box"  material="nut0_mat" pos="0.045 0.015 0.0" mass="0" />
+            <geom name="nut0_part1" size="0.045 0.015 0.015" type="box"  material="nut0_mat" pos="-0.015 0.045 0.0" mass="0" />
+            <geom name="nut0_part2" size="0.045 0.015 0.015" type="box"  material="nut0_mat" pos="0.015 -0.045 0.0" mass="0" />
+            <geom name="nut0_part3" size="0.015 0.045 0.015" type="box"  material="nut0_mat" pos="-0.045 -0.015 0.0" mass="0" />
+            <geom name="nut0_handle" size="0.0375 0.015 0.015" type="box"  material="nut0_mat" pos="0.095 0.0 0.0" mass="10"/>
+        </body>
+        <!-- <body name="nut1" pos="-0.5 0.0 0.075" >
+             <joint name="nut1_joint" />
+             <geom name="nut1_part0" size="0.01 0.02 0.01"  type="box"  material="nut0_mat" pos="0.03 0.0 0.0" mass="0" />
+             <geom name="nut1_part1" size="0.01 0.01414 0.01" axisangle="0 0 1 0.785398" type="box"  material="nut0_mat" pos="0.023 0.023 0.0" mass="0" />
+             <geom name="nut1_part2" size="0.01 0.01414 0.01" axisangle="0 0 1 -0.785398" type="box"  material="nut0_mat" pos="0.023 -0.023 0.0" mass="0" />
+             <geom name="nut1_part3" size="0.01 0.02 0.01" axisangle="0 0 1 1.570796" type="box"  material="nut0_mat" pos="0.0 0.03 0.0" mass="0" />
+             <geom name="nut1_part4" size="0.01 0.02 0.01" axisangle="0 0 1 -1.570796" type="box"  material="nut0_mat" pos="0.0 -0.03 0.0" mass="0" />
+             <geom name="nut1_part5" size="0.01 0.01414 0.01" axisangle="0 0 1 2.35619" type="box"  material="nut0_mat" pos="-0.023 0.023 0.0" mass="0" />
+             <geom name="nut1_part6" size="0.01 0.01414 0.01" axisangle="0 0 1 -2.35619" type="box"  material="nut0_mat" pos="-0.023 -0.023 0.0" mass="0" />
+             <geom name="nut1_part7" size="0.01 0.02 0.01" type="box"  material="nut0_mat" pos="-0.03 0.0 0.0" mass="0" />
+             <geom name="nut1_handle" size="0.03 0.01 0.01" type="box"  material="nut0_mat" pos="-0.06 0.0 0.0" mass="10" />
+             </body> -->
+
+    </worldbody>
+</mujoco>

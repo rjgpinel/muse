@@ -1,0 +1,15 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+
+    <asset>
+        <texture builtin="flat" type="2d" name="goal0_tex" height="32" width="32" />
+        <material name="goal0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="goal0_tex" />
+    </asset>
+
+    <worldbody>
+        <body mocap="true" name="goal0" pos="0.0 0.0 0.0">
+            <site name="goal0" size="0.015 0.015 0.015" rgba="1 0 0 1" type="sphere" />
+        </body>
+    </worldbody>
+
+</mujoco>

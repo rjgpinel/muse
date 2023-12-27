@@ -1,0 +1,39 @@
+<mujoco>
+    <include file="base_env.xml"></include>
+
+    <asset>
+        <texture builtin="flat" type="2d" name="cube0_tex" height="32" width="32" />
+        <material name="cube0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube0_tex" />
+        <texture builtin="flat" type="2d" name="cube1_tex" height="32" width="32" />
+        <material name="cube1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="cube1_tex" />
+        <texture builtin="flat" type="2d" name="marker0_tex" height="32" width="32" />
+        <material name="marker0_mat" specular="0.5" shininess="0.2" reflectance="0" texture="marker0_tex" />
+        <texture builtin="flat" type="2d" name="marker1_tex" height="32" width="32" />
+        <material name="marker1_mat" specular="0.5" shininess="0.2" reflectance="0" texture="marker1_tex" />
+    </asset>
+
+    <worldbody>
+        <body childclass="push_cube0" name="cube0" pos="0.02 0.02 0.02">
+            <joint name="cube0_joint" />
+            <geom name="cube0" size="0.02 0.02 0.02" type="box"  material="cube0_mat" />
+            <site name="cube0" size="0.02 0.02 0.02" rgba="1 0 0 1" type="sphere" />
+        </body>
+        <body childclass="push_cube1" name="cube1" pos="0.02 0.02 0.02">
+            <joint name="cube1_joint" />
+            <geom name="cube1" size="0.02 0.02 0.02" type="box"  material="cube1_mat" />
+            <site name="cube1" size="0.02 0.02 0.02" rgba="1 0 0 1" type="sphere" />
+        </body>
+        <body mocap="true" name="markers" pos="-0.65 0.0 0.012">
+            <body name="marker0">
+                <site name="marker0" size="0.03 0.03 0.01" pos="0.0 0.075 0.0" rgba="0 0 0 0" type="box" />
+                <geom name="marker0" size="0.03 0.03 0.01" pos="0.0 0.075 0.0" type="plane" material="marker0_mat"/>
+            </body>
+
+            <body name="marker1">
+                <site name="marker1" size="0.03 0.03 0.01" pos="0.0 -0.075 0.0" rgba="0 0 0 0" type="box" />
+                <geom name="marker1" size="0.03 0.03 0.01" pos="0.0 -0.075 0.0" type="plane"  material="marker1_mat" />
+            </body>
+        </body>
+    </worldbody>
+
+</mujoco>

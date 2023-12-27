@@ -1,0 +1,21 @@
+<mujoco>
+    <worldbody>
+        <!-- in mujoco: unit quaternion e = (1 0 0 0), q = (w x y z)
+                        camera renders along -Z
+             in calibration tools / bullet: q = (x y z w) in calibration tools
+                        camera renders along Z
+        -->
+        <body name="bravo_camera">
+            <!-- reference setup -->
+            <!-- <camera name="bravo_camera" fovy="42.5" pos="-0.5 0.7 0.4" quat="0 0 -0.50121 -0.86532" /> -->
+            <!-- real robot setup -->
+            <camera name="bravo_camera" fovy="42.5" pos="-0.494061 0.692729 0.400215" quat="0.0106 0.009202 -0.49285197 -0.86999994" />
+        </body>
+        <body name="charlie_camera">
+            <!-- reference setup -->
+            <!-- <camera name="charlie_camera" fovy="42.5" pos="-1.2 0 0.4" quat="0.61188 0.35441 -0.35441 -0.61188"  /> -->
+            <!-- real robot setup -->
+            <camera name="charlie_camera" fovy="42.5" pos="-1.201099 0.005 0.403127" quat="0.61425719 0.35218311 -0.35277111 -0.61172519"  />
+        </body>
+    </worldbody>
+</mujoco>

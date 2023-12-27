@@ -1,0 +1,15 @@
+<mujoco>
+    <worldbody>
+        <body name="table" pos="0 0 0" quat="1 0 0 0">
+            <!-- <geom pos="0 0 0" type="mesh"  mesh="vention_table" material="table_mat" name="vention_table" /> -->
+            <geom name="table" pos="0 -0.12 -0.025" size="0.9 0.39 0.025" type="box" material="table_mat" />
+            <body name="tower" pos="0 -0.3825 0" quat="1 0 0 0">
+                <geom pos="0 0 0" type="mesh" mesh="vention_tower" material="tower_mat" name="vention_tower" />
+            </body>
+            <!-- <site name="workspace" pos="-0.5 0 0" size="0.2 0.175 0.2" type="box" rgba="0 1 0 0.2" /> -->
+        </body>
+        <geom name="floor" pos="0 0 -0.8" size="10 10 0.01" type="plane" material="floor_mat" friction="0.4" />
+        <geom name="wall0" pos="0 -1.12 0" quat="0.70710678 0.70710678 0 0" size="5 0.8 0.01" type="box" material="wall0_mat"/>
+        <geom name="wall1" pos="3.75 0 0" quat="0.5 0.5 0.5 0.5" size="5 0.8 0.01" type="box" material="wall1_mat"/>
+    </worldbody>
+</mujoco>
