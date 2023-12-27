@@ -4,7 +4,6 @@ import numpy as np
 import time
 
 import muse.envs
-import minimuse.envs
 from muse.core import constants
 import gym
 
